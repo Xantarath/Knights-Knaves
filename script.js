@@ -1518,6 +1518,83 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
+    // ========================================================
+// RESPONSIVE CHARACTER SHEET
+// ========================================================
+
+const sheetWrapper =
+    document.querySelector(".sheet-wrapper");
+
+const characterSheet =
+    document.querySelector(".character-sheet");
+
+
+function resizeCharacterSheet() {
+
+    if (!sheetWrapper || !characterSheet) {
+        return;
+    }
+
+
+    // Original design width
+    const designWidth = 1200;
+
+
+    // Get the actual height of the unscaled sheet.
+    const designHeight =
+        characterSheet.scrollHeight;
+
+
+    // Available browser width.
+    const availableWidth =
+        document.documentElement.clientWidth;
+
+
+    // Never enlarge beyond the original 1200px size.
+    const scale =
+        Math.min(
+            1,
+            availableWidth / designWidth
+        );
+
+
+    // Scale the entire original sheet.
+    characterSheet.style.transform =
+        `scale(${scale})`;
+
+
+    characterSheet.style.transformOrigin =
+        "top left";
+
+
+    // Make the wrapper match the VISUAL scaled size.
+    sheetWrapper.style.width =
+        (designWidth * scale) + "px";
+
+
+    sheetWrapper.style.height =
+        (designHeight * scale) + "px";
+
+}
+
+
+// Recalculate whenever the browser changes size.
+window.addEventListener(
+    "resize",
+    resizeCharacterSheet
+);
+
+
+// Also account for phone orientation changes.
+window.addEventListener(
+    "orientationchange",
+    resizeCharacterSheet
+);
+
+
+// Run it when the page first loads.
+resizeCharacterSheet();
+
 
     // ========================================================
     // INITIALIZE
