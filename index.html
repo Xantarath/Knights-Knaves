@@ -1,164 +1,404 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Character Sheet</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
 </head>
+
 
 <body>
 
-    <div class="character-sheet">
 
-        <img src="character-sheet.png" alt="Character Sheet">
+    <!-- =====================================================
+         RESPONSIVE SHEET WRAPPER
+         ===================================================== -->
 
-
-        <!-- =================================================
-             NAME
-             ================================================= -->
-
-        <input type="text" id="name">
+    <div class="sheet-wrapper">
 
 
         <!-- =================================================
-             PHYSIQUE
+             CHARACTER SHEET
              ================================================= -->
 
-        <select id="physique">
-            <option value="Massive">Massive</option>
-            <option value="Huge">Huge</option>
-            <option value="Bulky">Bulky</option>
-            <option value="Muscular">Muscular</option>
-            <option value="Athletic">Athletic</option>
-            <option value="Average" selected>Average</option>
-            <option value="Toned">Toned</option>
-            <option value="Lean">Lean</option>
-            <option value="Slender">Slender</option>
-            <option value="Small">Small</option>
-            <option value="Meek">Meek</option>
-        </select>
+        <div class="character-sheet">
 
 
-        <!-- =================================================
-             HEIGHT
-             ================================================= -->
+            <!-- =============================================
+                 CHARACTER SHEET BACKGROUND
+                 ============================================= -->
 
-        <select id="height">
-            <option value="Tall">Tall</option>
-            <option value="Average" selected>Average</option>
-            <option value="Short">Short</option>
-        </select>
-
-
-        <!-- =================================================
-             PHYSIQUE-BASED VALUES
-             ================================================= -->
-
-        <input type="text" id="stealth" readonly>
-
-        <input type="text" id="mobility" readonly>
-
-        <input type="text" id="endurance" readonly>
-
-        <input type="text" id="recovery" readonly>
-
-        <input type="text" id="fatigue">
-
-        <input type="text" id="fortitude" readonly>
+            <img
+                src="character-sheet.png"
+                alt="Character Sheet"
+            >
 
 
-        <!-- =================================================
-             MIGHT / PADDING
-             ================================================= -->
+            <!-- =============================================
+                 NAME
+                 ============================================= -->
 
-        <input type="text" id="might" readonly>
-
-        <input type="text" id="padding" readonly>
-
-
-        <!-- =================================================
-             HEIGHT / GRAPPLING VALUES
-             ================================================= -->
-
-        <input type="text" id="reach" readonly>
-
-        <input type="text" id="grappling" readonly>
+            <input
+                type="text"
+                id="name"
+            >
 
 
-        <!-- =================================================
-             WEIGHT / MOVEMENT / PRIORITY
-             ================================================= -->
+            <!-- =============================================
+                 PHYSIQUE
+                 ============================================= -->
 
-        <input type="text" id="weight">
+            <select id="physique">
 
-        <input type="text" id="weightBase" readonly>
+                <option value="Massive">
+                    Massive
+                </option>
 
-        <input type="text" id="weightEIndicator" readonly>
+                <option value="Huge">
+                    Huge
+                </option>
 
-        <input type="text" id="movement" readonly>
+                <option value="Bulky">
+                    Bulky
+                </option>
 
-        <input type="text" id="priority">
+                <option value="Muscular">
+                    Muscular
+                </option>
 
+                <option value="Athletic">
+                    Athletic
+                </option>
 
-        <!-- =================================================
-             INJURY PENALTY INDICATORS
-             ================================================= -->
+                <option
+                    value="Average"
+                    selected
+                >
+                    Average
+                </option>
 
-        <input type="text" id="mightPenalty" readonly>
+                <option value="Toned">
+                    Toned
+                </option>
 
-        <input type="text" id="mobilityPenalty" readonly>
+                <option value="Lean">
+                    Lean
+                </option>
 
-        <input type="text" id="priorityPenalty" readonly>
+                <option value="Slender">
+                    Slender
+                </option>
 
+                <option value="Small">
+                    Small
+                </option>
 
-        <!-- =================================================
-             SKILLS
-             ================================================= -->
-
-        <textarea id="skills"></textarea>
-
-
-        <!-- =================================================
-             INJURY SYSTEM
-             ================================================= -->
-
-        <div id="injuryField">
-
-            <div id="injuryTokens"></div>
-
-            <select id="injurySelect">
-
-                <option value="">+</option>
-
-                <option value="bleeding">Bleeding</option>
-                <option value="bruise">Bruise</option>
-
-                <option value="head-injury">Head Injury</option>
-                <option value="head-wound">Head Wound</option>
-
-                <option value="left-arm-injury">Left Arm Injury</option>
-                <option value="left-arm-wound">Left Arm Wound</option>
-
-                <option value="leg-injury">Leg Injury</option>
-                <option value="leg-wound">Leg Wound</option>
-
-                <option value="right-arm-injury">Right Arm Injury</option>
-                <option value="right-arm-wound">Right Arm Wound</option>
-
-                <option value="torso-injury">Torso Injury</option>
-                <option value="torso-wound">Torso Wound</option>
+                <option value="Meek">
+                    Meek
+                </option>
 
             </select>
 
+
+            <!-- =============================================
+                 HEIGHT
+                 ============================================= -->
+
+            <select id="height">
+
+                <option value="Tall">
+                    Tall
+                </option>
+
+                <option
+                    value="Average"
+                    selected
+                >
+                    Average
+                </option>
+
+                <option value="Short">
+                    Short
+                </option>
+
+            </select>
+
+
+            <!-- =============================================
+                 PHYSIQUE-BASED VALUES
+                 ============================================= -->
+
+            <input
+                type="text"
+                id="stealth"
+                readonly
+            >
+
+            <input
+                type="text"
+                id="mobility"
+                readonly
+            >
+
+            <input
+                type="text"
+                id="endurance"
+                readonly
+            >
+
+            <input
+                type="text"
+                id="recovery"
+                readonly
+            >
+
+            <input
+                type="text"
+                id="fatigue"
+            >
+
+            <input
+                type="text"
+                id="fortitude"
+                readonly
+            >
+
+
+            <!-- =============================================
+                 MIGHT / PADDING
+                 ============================================= -->
+
+            <input
+                type="text"
+                id="might"
+                readonly
+            >
+
+            <input
+                type="text"
+                id="padding"
+                readonly
+            >
+
+
+            <!-- =============================================
+                 HEIGHT / GRAPPLING VALUES
+                 ============================================= -->
+
+            <input
+                type="text"
+                id="reach"
+                readonly
+            >
+
+            <input
+                type="text"
+                id="grappling"
+                readonly
+            >
+
+
+            <!-- =============================================
+                 WEIGHT / MOVEMENT / PRIORITY
+                 ============================================= -->
+
+            <input
+                type="text"
+                id="weight"
+            >
+
+            <input
+                type="text"
+                id="weightBase"
+                readonly
+            >
+
+            <input
+                type="text"
+                id="weightEIndicator"
+                readonly
+            >
+
+            <input
+                type="text"
+                id="movement"
+                readonly
+            >
+
+            <input
+                type="text"
+                id="priority"
+            >
+
+
+            <!-- =============================================
+                 INJURY PENALTY INDICATORS
+                 ============================================= -->
+
+            <input
+                type="text"
+                id="mightPenalty"
+                readonly
+            >
+
+            <input
+                type="text"
+                id="mobilityPenalty"
+                readonly
+            >
+
+            <input
+                type="text"
+                id="priorityPenalty"
+                readonly
+            >
+
+
+            <!-- =============================================
+                 SKILLS
+                 ============================================= -->
+
+            <textarea id="skills"></textarea>
+
+
+            <!-- =============================================
+                 INJURY SYSTEM
+                 ============================================= -->
+
+            <div id="injuryField">
+
+
+                <!-- =========================================
+                     ACTIVE INJURY TOKENS
+                     ========================================= -->
+
+                <div id="injuryTokens"></div>
+
+
+                <!-- =========================================
+                     ADD INJURY
+                     ========================================= -->
+
+                <select id="injurySelect">
+
+
+                    <option value="">
+                        +
+                    </option>
+
+
+                    <!-- =====================================
+                         GENERAL
+                         ===================================== -->
+
+                    <option value="bleeding">
+                        Bleeding
+                    </option>
+
+                    <option value="bruise">
+                        Bruise
+                    </option>
+
+
+                    <!-- =====================================
+                         HEAD
+                         ===================================== -->
+
+                    <option value="head-injury">
+                        Head Injury
+                    </option>
+
+                    <option value="head-wound">
+                        Head Wound
+                    </option>
+
+
+                    <!-- =====================================
+                         LEFT ARM
+                         ===================================== -->
+
+                    <option value="left-arm-injury">
+                        Left Arm Injury
+                    </option>
+
+                    <option value="left-arm-wound">
+                        Left Arm Wound
+                    </option>
+
+
+                    <!-- =====================================
+                         LEG
+                         ===================================== -->
+
+                    <option value="leg-injury">
+                        Leg Injury
+                    </option>
+
+                    <option value="leg-wound">
+                        Leg Wound
+                    </option>
+
+
+                    <!-- =====================================
+                         RIGHT ARM
+                         ===================================== -->
+
+                    <option value="right-arm-injury">
+                        Right Arm Injury
+                    </option>
+
+                    <option value="right-arm-wound">
+                        Right Arm Wound
+                    </option>
+
+
+                    <!-- =====================================
+                         TORSO
+                         ===================================== -->
+
+                    <option value="torso-injury">
+                        Torso Injury
+                    </option>
+
+                    <option value="torso-wound">
+                        Torso Wound
+                    </option>
+
+
+                </select>
+
+
+            </div>
+
+
         </div>
+        <!-- END CHARACTER SHEET -->
+
 
     </div>
+    <!-- END RESPONSIVE SHEET WRAPPER -->
 
+
+    <!-- =====================================================
+         CHARACTER SHEET JAVASCRIPT
+         ===================================================== -->
 
     <script src="script.js"></script>
 
+
 </body>
+
 </html>
